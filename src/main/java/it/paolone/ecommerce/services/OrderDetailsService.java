@@ -58,9 +58,6 @@ public class OrderDetailsService {
         return orderDetailsDTOList;
     }
 
-    public OrderDetailsDTO saveOrder(){
-
-    }
 
 
 }
