@@ -6,7 +6,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "customer_id")
+    @Column(name = "id")
     private Long customerId;
     @Column(name = "nominative")
     private String nominative;

@@ -13,6 +13,16 @@ public class SoldProducts {
     @Column(name = "order_id")
     private Long orderId;
 
+    /**
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", referencedColumnName =  "product_id")
+    private Product joinedProduct;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id", referencedColumnName = "order_id")
+    private Order joinedOrder;
+**/
+
     //getters and setters
 
 

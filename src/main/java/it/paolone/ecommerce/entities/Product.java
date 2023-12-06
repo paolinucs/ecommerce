@@ -13,6 +13,9 @@ public class Product {
     @Column(name = "barcode")
     private String barcode;
 
+    @Column(name = "quantity")
+    private short quantity;
+
     //getters and setters
 
 
@@ -40,5 +43,10 @@ public class Product {
         this.productName = productName;
     }
 
-
+    public short getQuantity() {
+        return quantity;
+    }
+    public void setQuantity(short quantity) {
+        this.quantity = quantity;
+    }
 }

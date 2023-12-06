@@ -18,7 +18,7 @@ public class Transaction {
     private int transactionAmount;
 
     @Column(name = "payment_type")
-    private String payamentType;
+    private String paymentType;
 
     @Column(name = "payment_data")
     private Long paymentData;
@@ -36,7 +36,7 @@ public class Transaction {
     }
 
     public String getPayamentType() {
-        return payamentType;
+        return paymentType;
     }
 
     public Long getPaymentData() {
@@ -56,7 +56,7 @@ public class Transaction {
     }
 
     public void setPayamentType(String payamentType) {
-        this.payamentType = payamentType;
+        this.paymentType = payamentType;
     }
 
     public void setPaymentData(Long paymentData) {
