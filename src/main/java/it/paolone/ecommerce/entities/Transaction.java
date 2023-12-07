@@ -23,6 +23,16 @@ public class Transaction {
     @Column(name = "payment_data")
     private Long paymentData;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn (name = "id", referencedColumnName = "payment_data")
+    private PaymentData fetchedPaymentData;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name= "type_name", referencedColumnName = "payment_type")
+    private PaymentType fetchedPaymentType;
+
+
+
     public Long getId() {
         return id;
     }
