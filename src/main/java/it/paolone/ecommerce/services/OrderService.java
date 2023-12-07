@@ -38,4 +38,8 @@ public class OrderService {
     public OrderDTO convertToOrderDTO(Order data){
         return modelMapper.map(data, OrderDTO.class);
     }
+
+    public Order convertToOrder(OrderDTO data) {
+        return modelMapper.map(data, Order.class);
+    }
 }

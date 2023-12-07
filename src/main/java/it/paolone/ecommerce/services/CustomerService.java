@@ -38,6 +38,8 @@ public class CustomerService {
     public CustomerDTO convertToCustomerDTO(Customer data){
         return modelMapper.map(data, CustomerDTO.class);
     }
-
+    public Customer convertToCustomer(CustomerDTO data){
+        return modelMapper.map(data,Customer.class);
+    }
 
 }

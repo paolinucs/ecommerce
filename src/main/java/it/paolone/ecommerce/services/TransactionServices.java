@@ -31,4 +31,8 @@ public class TransactionServices {
     public TransactionDTO convertToTransactionDTO(Transaction data){
         return modelMapper.map(data, TransactionDTO.class);
     }
+
+    public Transaction convertToTransaction(TransactionDTO data){
+        return modelMapper.map(data,Transaction.class);
+    }
  }

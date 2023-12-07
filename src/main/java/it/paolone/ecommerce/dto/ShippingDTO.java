@@ -1,19 +1,22 @@
 package it.paolone.ecommerce.dto;
 
-public class ShippingDTO {
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-    private Long id;
+public class ShippingDTO {
+    private long id;
     private String shippingDate;
     private String shippingAddress;
     private String shippingCompany;
     private String trackingCode;
 
-    public Long getId() {
-        return id;
-    }
+    //getters and setters
 
-    public String getShippingDate() {
-        return shippingDate;
+
+    public long getId() {
+        return id;
     }
 
     public String getShippingAddress() {
@@ -24,16 +27,16 @@ public class ShippingDTO {
         return shippingCompany;
     }
 
-    public void setTrackingCode(String trackingCode) {
-        this.trackingCode = trackingCode;
+    public String getShippingDate() {
+        return shippingDate;
     }
 
-    public void setId(Long id) {
+    public String getTrackingCode() {
+        return trackingCode;
+    }
+
+    public void setId(long id) {
         this.id = id;
-    }
-
-    public void setShippingDate(String shippingDate) {
-        this.shippingDate = shippingDate;
     }
 
     public void setShippingAddress(String shippingAddress) {
@@ -44,7 +47,11 @@ public class ShippingDTO {
         this.shippingCompany = shippingCompany;
     }
 
-    public String getTrackingCode() {
-        return trackingCode;
+    public void setShippingDate(String shippingDate) {
+        this.shippingDate = shippingDate;
+    }
+  
+    public void setTrackingCode(String trackingCode){
+        this.trackingCode = trackingCode;
     }
 }

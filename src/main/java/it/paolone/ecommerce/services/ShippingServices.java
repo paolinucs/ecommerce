@@ -36,4 +36,7 @@ public class ShippingServices {
     public ShippingDTO convertToShippingDTO(Shipping data){
        return modelMapper.map(data,ShippingDTO.class);
     }
+    public Shipping convertToShipping(ShippingDTO data){
+        return modelMapper.map(data,Shipping.class);
+    }
 }

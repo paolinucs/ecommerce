@@ -4,7 +4,6 @@ public class OrderDetailsDTO {
 
     private OrderDTO orderDtoData;
     private CustomerDTO customerDtoData;
-
     private ShippingDTO shippingDtoData;
     private TransactionDTO transactionDtoData;
 
