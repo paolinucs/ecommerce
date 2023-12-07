@@ -20,7 +20,7 @@ public class AppConfig {
     public ShippingServices shippingServices(ShippingRepository shippingRepository, ModelMapper modelMapper) {
         return new ShippingServices(shippingRepository, modelMapper);
     }
-
+    
     @Bean
     public TransactionServices transactionServices(TransactionRepository transactionRepository, ModelMapper modelMapper){
         return new TransactionServices(transactionRepository,modelMapper);
