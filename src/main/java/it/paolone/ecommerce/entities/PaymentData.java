@@ -19,6 +19,9 @@ public class PaymentData {
     @Column (name = "expires_year")
     private String expiresYear;
 
+    @OneToOne
+
+
     public Long getId() {
         return id;
     }

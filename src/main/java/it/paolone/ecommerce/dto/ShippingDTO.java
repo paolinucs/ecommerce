@@ -50,8 +50,8 @@ public class ShippingDTO {
     public void setShippingDate(String shippingDate) {
         this.shippingDate = shippingDate;
     }
-
-    public void setTrackingCode(String trackingCode) {
+  
+    public void setTrackingCode(String trackingCode){
         this.trackingCode = trackingCode;
     }
 }
