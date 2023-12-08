@@ -1,10 +1,23 @@
 package it.paolone.ecommerce.dto;
 
+import it.paolone.ecommerce.entities.PaymentData;
+import it.paolone.ecommerce.entities.PaymentType;
+
 public class TransactionDTO {
+
+    private Long transactionId;
     private String transactionDate;
     private int transactionAmount;
-    private String paymentType;
-    private Long paymentData;
+    private PaymentType paymentType;
+    private PaymentData paymentData;
+
+    public Long getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
+    }
 
     public void setTransactionDate(String transactionDate) {
         this.transactionDate = transactionDate;
@@ -14,20 +27,20 @@ public class TransactionDTO {
         this.transactionAmount = transactionAmount;
     }
 
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
-    }
-
-    public void setPaymentData(Long paymentData) {
+    public void setPaymentData(PaymentData paymentData) {
         this.paymentData = paymentData;
     }
 
-    public String getPaymentType() {
-        return paymentType;
+    public void setPaymentType(PaymentType paymentType) {
+        this.paymentType = paymentType;
     }
 
-    public Long getPaymentData() {
+    public PaymentData getPaymentData() {
         return paymentData;
+    }
+
+    public PaymentType getPaymentType() {
+        return paymentType;
     }
 
     public String getTransactionDate() {

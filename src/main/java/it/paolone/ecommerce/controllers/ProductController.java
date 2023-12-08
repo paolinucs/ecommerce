@@ -4,10 +4,7 @@ import it.paolone.ecommerce.entities.Product;
 import it.paolone.ecommerce.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ProductController {
@@ -30,7 +27,7 @@ public class ProductController {
     }
 
     @PostMapping("/api/products/save_product")
-    public ResponseEntity<Product> saveProduct(@RequestBody Product data){
+    public ResponseEntity<Product> saveProduct(@PathVariable Product data){
         if(data != null){
             Product saveRequest = productService.saveProduct(data);
             return ResponseEntity.ok(saveRequest);

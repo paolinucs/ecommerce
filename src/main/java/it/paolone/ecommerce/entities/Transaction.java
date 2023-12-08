@@ -16,22 +16,13 @@ public class Transaction {
 
     @Column(name = "transaction_amount")
     private int transactionAmount;
-
-    @Column(name = "payment_type")
-    private String paymentType;
-
-    @Column(name = "payment_data")
-    private Long paymentData;
-
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn (name = "id", referencedColumnName = "payment_data")
+    @JoinColumn (name = "payment_data", referencedColumnName = "id")
     private PaymentData fetchedPaymentData;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name= "type_name", referencedColumnName = "payment_type")
+    @JoinColumn(name= "payment_type", referencedColumnName = "type_name")
     private PaymentType fetchedPaymentType;
-
-
 
     public Long getId() {
         return id;
@@ -43,14 +34,6 @@ public class Transaction {
 
     public int getTransactionAmount() {
         return transactionAmount;
-    }
-
-    public String getPayamentType() {
-        return paymentType;
-    }
-
-    public Long getPaymentData() {
-        return paymentData;
     }
 
     public void setId(Long id) {
@@ -65,11 +48,19 @@ public class Transaction {
         this.transactionAmount = transactionAmount;
     }
 
-    public void setPayamentType(String payamentType) {
-        this.paymentType = payamentType;
-    }
+  public PaymentData getFetchedPaymentData() {
+    return fetchedPaymentData;
+  }
 
-    public void setPaymentData(Long paymentData) {
-        this.paymentData = paymentData;
-    }
+  public PaymentType getFetchedPaymentType() {
+    return fetchedPaymentType;
+  }
+
+  public void setFetchedPaymentData(PaymentData fetchedPaymentData) {
+    this.fetchedPaymentData = fetchedPaymentData;
+  }
+
+  public void setFetchedPaymentType(PaymentType fetchedPaymentType) {
+    this.fetchedPaymentType = fetchedPaymentType;
+  }
 }

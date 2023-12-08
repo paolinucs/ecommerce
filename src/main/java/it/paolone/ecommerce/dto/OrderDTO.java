@@ -1,5 +1,9 @@
 package it.paolone.ecommerce.dto;
 
+import it.paolone.ecommerce.entities.Customer;
+import it.paolone.ecommerce.entities.Shipping;
+import it.paolone.ecommerce.entities.Transaction;
+
 public class OrderDTO {
 
     private Long orderId;
@@ -8,12 +12,21 @@ public class OrderDTO {
     private Long shippingId;
     private Long transactionId;
 
-    public Long getCustomerId() {
-        return customerId;
-    }
 
     public String getOrderDate() {
         return orderDate;
+    }
+
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public Long getTransactionId() {
+        return transactionId;
+    }
+
+    public void setShippingId(Long shippingId) {
+        this.shippingId = shippingId;
     }
 
     public Long getShippingId() {
@@ -24,27 +37,20 @@ public class OrderDTO {
         return orderId;
     }
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
-
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
-    }
-
-    public void setShippingId(Long shippingId) {
-        this.shippingId = shippingId;
-    }
-
-    public void setTransactionId(Long transactionId) {
-        this.transactionId = transactionId;
     }
 
     public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
 
-    public Long getTransactionId() {
-        return transactionId;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
+
+    public Long getCustomerId() {
+        return customerId;
     }
 }
+

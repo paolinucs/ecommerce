@@ -4,9 +4,7 @@ import it.paolone.ecommerce.dto.OrderDetailsDTO;
 import it.paolone.ecommerce.services.OrderDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +28,21 @@ public class OrderDetailsController {
             return ResponseEntity.noContent().build();
         }
     }
+
+    @PostMapping("/save_new")
+    public ResponseEntity<OrderDetailsDTO> saveOrderData(@RequestBody OrderDetailsDTO in) {
+        if (in != null) {
+            OrderDetailsDTO data = orderDetailsService.saveNewOrder(in);
+            if (data != null) {
+                return ResponseEntity.ok(data);
+            } else {
+                return ResponseEntity.internalServerError().build();
+            }
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+
 
 }

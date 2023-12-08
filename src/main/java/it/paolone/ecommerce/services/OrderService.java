@@ -2,10 +2,12 @@ package it.paolone.ecommerce.services;
 import it.paolone.ecommerce.dto.OrderDTO;
 import it.paolone.ecommerce.entities.Order;
 import it.paolone.ecommerce.repositories.OrderRepository;
+import org.hibernate.annotations.SourceType;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,7 +41,14 @@ public class OrderService {
         return modelMapper.map(data, OrderDTO.class);
     }
 
-    public Order convertToOrder(OrderDTO data) {
-        return modelMapper.map(data, Order.class);
+    public Order convertToOrder(OrderDTO source) {
+        if (source != null){
+            return modelMapper.map(source, Order.class);
+        }
+        else{
+            throw new IllegalArgumentException("!!! convertToOrder input cannot be null !!!");
+        }
+
+
     }
 }
